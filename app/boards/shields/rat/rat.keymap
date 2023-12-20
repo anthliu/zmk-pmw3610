@@ -1,0 +1,21 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
+
+/ {
+
+  keymap {
+    compatible = "zmk,keymap";
+
+        Base {
+            label = "Base";
+            bindings = <
+    &kp TAB     &kp Q   &kp W   &kp E
+    &kp ESC     &kp A
+            >;
+            trackball-bindings = <&tmv_coarse>;
+        };
+    };
+};

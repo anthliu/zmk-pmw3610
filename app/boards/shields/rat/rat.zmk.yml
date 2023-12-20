@@ -1,0 +1,11 @@
+file_format: "1"
+id: rat
+name: RatMouse
+type: shield
+url: https://github.com/anthliu/zmk-pmw3610
+requires: [xiao_ble]
+features:
+  - keys
+  - pointer
+siblings:
+  - rat
