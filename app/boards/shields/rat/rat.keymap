@@ -12,8 +12,8 @@
         Base {
             label = "Base";
             bindings = <
-    &kp TAB     &kp Q   &kp W   &kp E
-    &kp ESC     &kp A
+    &kp A       &kp B   &kp C   &kp D
+    &kp E       &kp F
             >;
             trackball-bindings = <&tmv_coarse>;
         };
