@@ -1,6 +1,6 @@
 if SHIELD_RAT
 
 config ZMK_KEYBOARD_NAME
-	default "Charybdis"
+	default "Rat"
 
 endif

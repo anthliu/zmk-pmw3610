@@ -11,9 +11,9 @@
 
 &kscan0 {
 	col-gpios
-		= <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		= <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		;
 };
 
@@ -29,4 +29,8 @@
 &trackball {
 	status = "okay"; //okay
 	irq-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+};
+
+&scroll_encoder {
+        status = "okay";
 };

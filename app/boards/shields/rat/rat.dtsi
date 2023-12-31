@@ -23,8 +23,8 @@
 
         diode-direction = "row2col";
 		row-gpios
-			= <&xiao_d 10 GPIO_ACTIVE_HIGH>
-			, <&xiao_d 9 GPIO_ACTIVE_HIGH>
+			= <&xiao_d 6 GPIO_ACTIVE_HIGH>
+			, <&xiao_d 7 GPIO_ACTIVE_HIGH>
             ;
     };
 
@@ -46,4 +46,18 @@
 		spi-max-frequency = <2000000>;
 		duplex = <2048>; // required by 3-wire spi
 	};
+
+    scroll_encoder: encoder_scroll {
+        compatible = "alps,ec11";
+        label = "SCROLL";
+        a-gpios = <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        resolution = <4>;
+        status = "disabled";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&scroll_encoder>;
+    };
 };
