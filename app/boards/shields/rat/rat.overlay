@@ -6,17 +6,6 @@
  
 #include "rat.dtsi"
 
-&default_transform {
-};
-
-&kscan0 {
-	col-gpios
-		= <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		;
-};
-
 // trackball bus
 &spi0 {
 	status = "okay"; //okay

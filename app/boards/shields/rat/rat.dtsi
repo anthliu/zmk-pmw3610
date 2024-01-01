@@ -22,30 +22,35 @@
         label = "KSCAN";
 
         diode-direction = "row2col";
-		row-gpios
-			= <&xiao_d 6 GPIO_ACTIVE_HIGH>
-			, <&xiao_d 7 GPIO_ACTIVE_HIGH>
-            ;
+        row-gpios
+                = <&xiao_d 6 GPIO_ACTIVE_HIGH>
+                , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+                ;
+        col-gpios
+                = <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                ;
     };
 
-	trackballs {
-		compatible = "zmk,keymap-trackballs";
-		trackballs = <&trackball>;
-	};
+    trackballs {
+            compatible = "zmk,keymap-trackballs";
+            trackballs = <&trackball>;
+    };
 };
 
 &spi0 {
-	compatible = "nordic,nrf-spim";
-	status = "disabled";
+        compatible = "nordic,nrf-spim";
+        status = "disabled";
 
-	trackball: trackball@0 {
-		compatible = "pixart,pmw3610";
-		status = "disabled";
-		reg = <0>;
-		label = "TRACKBALL";
-		spi-max-frequency = <2000000>;
-		duplex = <2048>; // required by 3-wire spi
-	};
+        trackball: trackball@0 {
+                compatible = "pixart,pmw3610";
+                status = "disabled";
+                reg = <0>;
+                label = "TRACKBALL";
+                spi-max-frequency = <2000000>;
+                duplex = <2048>; // required by 3-wire spi
+        };
 
     scroll_encoder: encoder_scroll {
         compatible = "alps,ec11";
